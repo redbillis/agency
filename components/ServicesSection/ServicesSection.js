@@ -3,6 +3,7 @@ import design from "../../public/design.png";
 import code from "../../public/code.png";
 import consulting from "../../public/consulting.png";
 import seo from '../../public/AI Icons/seo-2.png';
+import seoThree from '../../public/AI Icons/seo-3.png'
 
 // components
 import ServiceCard from "./ServiceCard";
@@ -59,7 +60,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="PPC Advertising"
           cardDetails="Maximize Your ROI with Our Targeted PPC Campaigns"
           cardDesignTools="Design tools we use"
@@ -68,7 +69,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="Content Marketing"
           cardDetails="Engage Your Audience with Compelling, Quality Content"
           cardDesignTools="Design tools we use"
@@ -79,7 +80,7 @@ const ServicesSection = () => {
       </div>
       <div className="lg:flex gap-10">
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="Email Marketing"
           cardDetails="Effective Email Campaigns That Drive Results"
           cardDesignTools="Design tools we use"
@@ -88,7 +89,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="E-Commerce Solutions"
           cardDetails="Streamline Your Online Store and Boost Sales with Our Expertise"
           cardDesignTools="Design tools we use"
@@ -97,7 +98,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="App Development"
           cardDetails="Custom-Built Apps That Solve Your Unique Challenges"
           cardDesignTools="Design tools we use"
@@ -106,7 +107,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="Branding"
           cardDetails="Stand Out with a Strong, Cohesive Brand Identity"
           cardDesignTools="Design tools we use"
@@ -115,7 +116,7 @@ const ServicesSection = () => {
           ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={seoThree}
           cardTitle="Website Maintenance"
           cardDetails="Ensure Your Website is Always Running Smoothly with Our Maintenance Services"
           cardDesignTools="Design tools we use"

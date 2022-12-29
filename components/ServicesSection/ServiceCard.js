@@ -11,7 +11,7 @@ const ServiceCard = ({
 }) => {
   return (
     <div className="text-center p-10 rounded-xl my-10 flex flex-col items-center shadow-2xl hover:shadow-xl">
-      <Image src={cardImg} width={600} height={600} alt="design-icon" />
+      <Image src={cardImg} width={500} height={500} alt="design-icon" />
       <h3 className="text-xl font-medium pt-8 pb-2 text-red-600">
         {cardTitle}
       </h3>

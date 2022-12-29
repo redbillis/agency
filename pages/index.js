@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-gray-100 px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+      <main className="bg-gray-100 px-4 md:px-20 lg:px-40 dark:bg-gray-900">
         <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
         <HeroSection />
         <ServicesSection />

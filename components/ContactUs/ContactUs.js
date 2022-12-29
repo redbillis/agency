@@ -1,7 +1,7 @@
 const ContactUs = () => {
   return (
     <div
-      className="flex flex-col justify-center items-center text-center p-20 text-black dark:text-white"
+      className="flex flex-col justify-center items-center text-center py-20 text-black dark:text-white"
       id="contact-us"
     >
       <h1 className="text-4xl text-red-600 my-10">Contact Us</h1>
@@ -15,7 +15,7 @@ const ContactUs = () => {
           the form.
         </p>
       </div>
-      <form action="" className="w-[600px]">
+      <form action="" className="md:w-[600px]">
         {/* Name and Email Fields Start */}
         <div className="flex my-3 gap-3">
           {/* Name Field Start */}
