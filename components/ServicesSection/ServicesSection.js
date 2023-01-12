@@ -1,9 +1,16 @@
 import Image from "next/image";
-import design from "../../public/design.png";
-import code from "../../public/code.png";
-import consulting from "../../public/consulting.png";
-import seo from '../../public/AI Icons/seo-2.png';
-import seoThree from '../../public/AI Icons/seo-3.png'
+import design from "../../public/AI Icons/web-development.png";
+import socialMedia from '../../public/AI Icons/social_media-2.png';
+import socialContent from '../../public/AI Icons/social_media_content.png'
+import ppc from '../../public/AI Icons/ppc.png';
+import emailMarketing from "../../public/AI Icons/email-marketing.png";
+import eCommerce from "../../public/AI Icons/e-commerce.png";
+import appDev from "../../public/AI Icons/app_development.png";
+import webMaintenance from "../../public/AI Icons/web-maintenance.png";
+import branding from "../../public/AI Icons/branding.png";
+
+import seo from "../../public/AI Icons/seo-2.png";
+import seoThree from "../../public/AI Icons/seo-3.png";
 
 // components
 import ServiceCard from "./ServiceCard";
@@ -36,93 +43,53 @@ const ServicesSection = () => {
           cardImg={design}
           cardTitle="Web Design"
           cardDetails="Creative, Eye-Catching Websites That Convert"
-          cardDesignTools="Design tools we use"
-          ToolOne="Gimp"
-          ToolTwo="Figma"
-          ToolThree="Blender"
         />
         <ServiceCard
           cardImg={seo}
           cardTitle="SEO"
           cardDetails="Boost Your Online Visibility with Our Proven SEO Strategies"
-          cardDesignTools="Design tools we use"
-          ToolOne="HTMLS / CSS"
-          ToolTwo="JavaScript"
-          ToolThree="React / NextJS"
         />
         <ServiceCard
-          cardImg={consulting}
+          cardImg={socialMedia}
           cardTitle="Social Media Marketing"
           cardDetails="Grow Your Following and Boost Engagement with Our Social Media Services"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={ppc}
           cardTitle="PPC Advertising"
           cardDetails="Maximize Your ROI with Our Targeted PPC Campaigns"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={socialContent}
           cardTitle="Content Marketing"
           cardDetails="Engage Your Audience with Compelling, Quality Content"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
       </div>
       <div className="lg:flex gap-10">
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={emailMarketing}
           cardTitle="Email Marketing"
           cardDetails="Effective Email Campaigns That Drive Results"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={eCommerce}
           cardTitle="E-Commerce Solutions"
           cardDetails="Streamline Your Online Store and Boost Sales with Our Expertise"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={appDev}
           cardTitle="App Development"
           cardDetails="Custom-Built Apps That Solve Your Unique Challenges"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={branding}
           cardTitle="Branding"
           cardDetails="Stand Out with a Strong, Cohesive Brand Identity"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
         <ServiceCard
-          cardImg={seoThree}
+          cardImg={webMaintenance}
           cardTitle="Website Maintenance"
           cardDetails="Ensure Your Website is Always Running Smoothly with Our Maintenance Services"
-          cardDesignTools="Design tools we use"
-          ToolOne="Digital Marketing"
-          ToolTwo="Google / Facebook Ads"
-          ToolThree="Email Marketing"
         />
       </div>
     </section>

@@ -16,10 +16,6 @@ const ServiceCard = ({
         {cardTitle}
       </h3>
       <p className="py-2 dark:text-white">{cardDetails}</p>
-      <h4 className="py-4 text-red-600">{cardDesignTools}</h4>
-      <p className="text-gray-800 py-1 dark:text-gray-400">{ToolOne}</p>
-      <p className="text-gray-800 py-1 dark:text-gray-400">{ToolTwo}</p>
-      <p className="text-gray-800 py-1 dark:text-gray-400">{ToolThree}</p>
     </div>
   );
 };
