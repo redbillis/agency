@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+// import '../utils/blob'
 
 // components
 import Navigation from "../components/Navigation";
@@ -20,6 +21,8 @@ export default function Home() {
       </Head>
 
       <main className="bg-gray-100 px-4 md:px-20 lg:px-40 dark:bg-gray-900">
+        {/* <div id="blob"></div> */}
+
         <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
         <HeroSection />
         <ServicesSection />

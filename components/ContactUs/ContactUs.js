@@ -1,6 +1,33 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 const ContactUs = () => {
+  const textAnimation = useAnimation();
+
+  const [refBottom, inViewRefBottom] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inViewRefBottom) {
+      textAnimation.start({
+        opacity: 1,
+        y: ["10px", "0px"],
+        transition: {
+          duration: 2,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [textAnimation, inViewRefBottom]);
+
   return (
-    <div
+    <motion.div
+      ref={refBottom}
+      initial={{ opacity: 0 }}
+      animate={textAnimation}
       className="flex flex-col justify-center items-center text-center py-20 text-black dark:text-white"
       id="contact-us"
     >
@@ -11,8 +38,8 @@ const ContactUs = () => {
           large projects.
         </p>
         <p>
-          However, if you have other requests or questions, don’t hesitate to use
-          the form.
+          However, if you have other requests or questions, don’t hesitate to
+          use the form.
         </p>
       </div>
       <form action="" className="md:w-[600px]">
@@ -68,7 +95,7 @@ const ContactUs = () => {
           Send Message
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import design from "../../public/AI Icons/web-development.png";
-import socialMedia from '../../public/AI Icons/social_media-2.png';
-import socialContent from '../../public/AI Icons/social_media_content.png'
-import ppc from '../../public/AI Icons/ppc.png';
+import socialMedia from "../../public/AI Icons/social_media-2.png";
+import socialContent from "../../public/AI Icons/social_media_content.png";
+import ppc from "../../public/AI Icons/ppc.png";
 import emailMarketing from "../../public/AI Icons/email-marketing.png";
 import eCommerce from "../../public/AI Icons/e-commerce.png";
 import appDev from "../../public/AI Icons/app_development.png";
@@ -15,10 +15,38 @@ import seoThree from "../../public/AI Icons/seo-3.png";
 // components
 import ServiceCard from "./ServiceCard";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 const ServicesSection = () => {
+  const textAnimation = useAnimation();
+
+  const [refBottom, inViewRefBottom] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inViewRefBottom) {
+      textAnimation.start({
+        opacity: 1,
+        y: ["10px", "0px"],
+        transition: {
+          duration: 2,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [textAnimation, inViewRefBottom]);
+
   return (
     <section>
-      <div>
+      <motion.div
+        ref={refBottom}
+        initial={{ opacity: 0 }}
+        animate={textAnimation}
+      >
         <h3 className="text-3xl py-1 dark:text-gray-500">Services we offer</h3>
         <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
           Our team of experienced{" "}
@@ -37,7 +65,7 @@ const ServicesSection = () => {
           <span className="text-red-500">Contact us today</span> to learn more
           about how we can help you succeed online{" "}
         </p>
-      </div>
+      </motion.div>
       <div className="lg:flex gap-10">
         <ServiceCard
           cardImg={design}

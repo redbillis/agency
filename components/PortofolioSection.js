@@ -6,10 +6,38 @@ import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 const PortofolioSection = () => {
+  const textAnimation = useAnimation();
+
+  const [refBottom, inViewRefBottom] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inViewRefBottom) {
+      textAnimation.start({
+        opacity: 1,
+        y: ["10px", "0px"],
+        transition: {
+          duration: 2,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [textAnimation, inViewRefBottom]);
+
   return (
     <section>
-      <div>
+      <motion.div
+        ref={refBottom}
+        initial={{ opacity: 0 }}
+        animate={textAnimation}
+      >
         <h3 className="text-3xl py-1 text-red-600">Portofolio</h3>
         <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eius{" "}
@@ -25,7 +53,7 @@ const PortofolioSection = () => {
           <span className="text-red-500">excepturi</span> dignissimos ad
           molestiae voluptatem.
         </p>
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
         <div className="basis-1/3 flex-1">
           <Image

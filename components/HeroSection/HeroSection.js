@@ -1,10 +1,39 @@
 import SocialSection from "./SocialSection";
 import AvatarSection from "./AvatarSection";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 const HeroSection = () => {
+  const textAnimation = useAnimation();
+
+  const [refBottom, inViewRefBottom] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inViewRefBottom) {
+      textAnimation.start({
+        opacity: 1,
+        y: ["10px", "0px"],
+        transition: {
+          duration: 2,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [textAnimation, inViewRefBottom]);
+
   return (
     <section className="min-h-screen">
-      <div className="text-center px-10">
+      <motion.div
+        ref={refBottom}
+        initial={{ opacity: 0 }}
+        animate={textAnimation}
+        className="text-center px-10"
+      >
         <h2 className="text-5xl py-2 text-red-600 font-semibold  md:text-6xl">
           Red Agency
         </h2>
@@ -19,7 +48,7 @@ const HeroSection = () => {
           help businesses of all sizes reach new customers, increase brand
           awareness, and drive sales.
         </p>
-      </div>
+      </motion.div>
       <AvatarSection />
       <SocialSection />
     </section>
