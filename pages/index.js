@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
-// import '../utils/blob'
+import { useEffect, useState } from "react";
 
 // components
 import Navigation from "../components/Navigation";
@@ -12,6 +11,22 @@ import ContactUs from "../components/ContactUs/ContactUs";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
+  useEffect(() => {
+    const blob = document.getElementById("blob");
+
+    document.body.onpointermove = (event) => {
+      const { clientX, clientY } = event;
+
+      blob.animate(
+        {
+          left: `${clientX}px`,
+          top: `${clientY}px`,
+        },
+        { duration: 3000, fill: "forwards" }
+      );
+    };
+  }, []);
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -21,7 +36,8 @@ export default function Home() {
       </Head>
 
       <main className="bg-gray-100 px-4 md:px-20 lg:px-40 dark:bg-gray-900">
-        {/* <div id="blob"></div> */}
+        <div id="blob"></div>
+        <div id="blur"></div>
 
         <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
         <HeroSection />

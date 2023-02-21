@@ -19,9 +19,23 @@ a {
   box-sizing: border-box;
 }
 
-@font-face{
-  font-family: 'burtons';
-  src: url('../public/Fonts/Burtons.otf')
+@font-face {
+  font-family: "burtons";
+  src: url("../public/Fonts/Burtons.otf");
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
 }
 
 #blob {
@@ -29,4 +43,20 @@ a {
   height: 500px;
   aspect-ratio: 1;
   position: absolute;
+  left: 50%;
+  top: 50px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, aquamarine, mediumpurple);
+  animation: rotate 2 0s infinite;
+  filter: blur(200px);
+  z-index: 0;
 }
+
+/* #blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(200px);
+} */
