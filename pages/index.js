@@ -35,15 +35,16 @@ export default function Home() {
         <link rel="icon" href="/logo/RƎD-removebg-white-text.ico" />
       </Head>
 
-      <div id="blob"></div>
-      <div id="blur"></div>
-      
       <main className="bg-gray-100 px-4 md:px-20 lg:px-40 dark:bg-gray-900">
-        <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
-        <HeroSection />
-        <ServicesSection />
-        <PortofolioSection />
-        <ContactUs />
+        <div id="blob"></div>
+        <div id="blur"></div>
+        <div className="relative">
+          <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
+          <HeroSection />
+          <ServicesSection />
+          <PortofolioSection />
+          <ContactUs />
+        </div>
       </main>
     </div>
   );

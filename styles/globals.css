@@ -47,17 +47,18 @@ a {
   top: 50px;
   translate: -50% -50%;
   border-radius: 50%;
-  background: linear-gradient(to right, aquamarine, mediumpurple);
+  background: linear-gradient(to right, blue, red);
   animation: rotate 2 0s infinite;
   filter: blur(200px);
   z-index: 0;
   pointer-events: none;
 }
 
-/* #blur {
-  height: 100%;
+#blur {
+  height: 100vw;
   width: 100%;
-  position: absolute;
-  z-index: 2;
+  left: 0;
+  position: fixed;
+  z-index: 0;
   backdrop-filter: blur(200px);
-} */
+}
