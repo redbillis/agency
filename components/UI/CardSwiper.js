@@ -1,4 +1,20 @@
 const CardSwiper = () => {
+  const handleClick = () => {
+    const nextIndex =
+      acticeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+
+    const currentGroup = document.querySelector(
+        `[data-index="${acticeIndex}"]`
+      ),
+      nextGroup = document.querySelector(`[data-index="${nextIndex}]`);
+
+    currentGroup.dataset.status = "after";
+
+    nextGroup.dataset.status = "active";
+
+    activeIndex = nextIndex;
+  };
+
   return (
     <div className="flex justify-center items-center w-full h-screen">
       <div className="card-swiper">
