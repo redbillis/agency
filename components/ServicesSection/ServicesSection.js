@@ -40,6 +40,22 @@ const ServicesSection = () => {
     }
   }, [textAnimation, inViewRefBottom]);
 
+  const handleClick = () => {
+    const nextIndex =
+      acticeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+
+    const currentGroup = document.querySelector(
+        `[data-index="${acticeIndex}"]`
+      ),
+      nextGroup = document.querySelector(`[data-index="${nextIndex}]`);
+
+    currentGroup.dataset.status = "after";
+
+    nextGroup.dataset.status = "active";
+
+    activeIndex = nextIndex;
+  };
+
   return (
     <section>
       <motion.div
@@ -120,6 +136,8 @@ const ServicesSection = () => {
           cardDetails="Ensure Your Website is Always Running Smoothly with Our Maintenance Services"
         />
       </div>
+
+      
     </section>
   );
 };

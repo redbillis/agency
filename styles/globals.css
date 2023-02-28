@@ -24,6 +24,8 @@ a {
   src: url("../public/Fonts/Burtons.otf");
 }
 
+/* Blurred Blob Start */
+
 @keyframes rotate {
   from {
     rotate: 0deg;
@@ -48,7 +50,7 @@ a {
   translate: -50% -50%;
   border-radius: 50%;
   background: linear-gradient(to right, blue, red);
-  animation: rotate 2 0s infinite;
+  animation: rotate 20s infinite;
   filter: blur(200px);
   z-index: 0;
   pointer-events: none;
@@ -62,3 +64,100 @@ a {
   z-index: 0;
   backdrop-filter: blur(200px);
 }
+
+/* Blurred Blob End */
+
+/* Animated Cards Start */
+
+.card {
+  aspect-ratio: 5 / 7;
+  background-color: rgb(255, 255, 255, 0.1);
+  position: absolute;
+  transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+}
+
+.card-groups,
+.card-group,
+.card {
+  aspect-ratio: 5 / 7;
+}
+
+.card-groups,
+.card-group,
+.big-card {
+  width: 30vmin;
+}
+
+.card-group {
+  position: absolute;
+}
+
+.big-card {
+  width: 30vmin;
+  border-radius: 1vmin;
+}
+
+.little-card {
+  width: 12vmin;
+  border-radius: 2vmin;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  top: 43.5%;
+}
+
+.big-card:nth-child(2) {
+  transform: translateX(-10%) rotate(-1deg);
+}
+
+.big-card:nth-child(4) {
+  transform: rotate(2deg);
+}
+
+.big-card:nth-child(6) {
+  transform: translateX(-6%) rotate(-3deg);
+}
+
+.big-card:nth-child(8) {
+  transform: translate(10%, 3%) rotate(5deg);
+}
+
+.card-group:hover > .big-card:nth-child(2) {
+  transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+  transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+  transform: translate(25%, 8%) rotate(8deg);
+}
+
+.card-group:hover > .big-card:nth-child(8) {
+  transform: translate(75%, 16%) rotate(24deg);
+}
+
+.card-group:hover > .little-card:nth-child(1) {
+  transform: translate(200%, -70%) rotate(-15deg);
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+  transform: translate(160%, 270%) rotate(15deg);
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+  transform: translate(-200%, -70%) rotate(15deg);
+}
+.card-group:hover > .little-card:nth-child(7) {
+  transform: translate(-280%, 240%) rotate(-15deg);
+}
+
+.card-group[data-status="unknown"] {
+  transform: scale(0);
+}
+
+.card-group[data-status="after"] {
+  transform: translateX(50%) scale(0);
+}
+
+/* Animated Cards End */
