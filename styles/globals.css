@@ -41,15 +41,12 @@ a {
 }
 
 #blob {
-  background-color: white;
   height: 500px;
   aspect-ratio: 1;
-  position: fixed;
   left: 50%;
   top: 50px;
   translate: -50% -50%;
   border-radius: 50%;
-  background: linear-gradient(to right, blue, red);
   animation: rotate 20s infinite;
   filter: blur(200px);
   z-index: 0;

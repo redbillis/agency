@@ -37,7 +37,10 @@ export default function Home() {
       </Head>
 
       <main className="bg-gray-100 px-4 md:px-20 lg:px-40 dark:bg-gray-900">
-        <div id="blob"></div>
+        <div
+          className="fixed bg-gradient-to-r dark:from-blue-700 dark:to-red-900 from-red-300 to-blue-300"
+          id="blob"
+        ></div>
         <div id="blur"></div>
         <div className="relative">
           <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
