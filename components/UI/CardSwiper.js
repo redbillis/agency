@@ -1,10 +1,19 @@
+import { useEffect, useState } from "react";
+
 const CardSwiper = () => {
-  const handleClick = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [groups, setGroups] = useState('');
+
+  useEffect(() => {
+    setGroups(document.getElementsByClassName("card-group"));
+  }, []);
+
+  const handleLoveClick = () => {
     const nextIndex =
-      acticeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
+      activeIndex + 1 <= groups.length - 1 ? activeIndex + 1 : 0;
 
     const currentGroup = document.querySelector(
-        `[data-index="${acticeIndex}"]`
+        `[data-index="${activeIndex}"]`
       ),
       nextGroup = document.querySelector(`[data-index="${nextIndex}]`);
 
@@ -12,7 +21,7 @@ const CardSwiper = () => {
 
     nextGroup.dataset.status = "active";
 
-    activeIndex = nextIndex;
+    setActiveIndex(nextIndex);
   };
 
   return (
@@ -77,14 +86,14 @@ const CardSwiper = () => {
           <button
             id="hate-button"
             className=" border-4 rounded-full border-red-600 px-2 py-3"
-            onClick={handleClick}
+            // onClick={handleHateClick}
           >
             ❌
           </button>
           <button
             id="love-button"
             className=" border-4 rounded-full border-red-600 px-2 py-3"
-            onClick={handleClick}
+            onClick={handleLoveClick}
           >
             ❤️
           </button>

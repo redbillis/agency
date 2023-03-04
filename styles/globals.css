@@ -90,6 +90,7 @@ a {
 
 .card-group {
   position: absolute;
+  transition: transform 300ms ease;
 }
 
 .big-card {
@@ -159,5 +160,9 @@ a {
 .card-group[data-status="after"] {
   transform: translateX(50%) scale(0);
 }
+
+/* .card-group[data-index="1"] > .big-card:nth-child(6) {
+
+} */
 
 /* Animated Cards End */

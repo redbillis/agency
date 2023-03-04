@@ -7,6 +7,7 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import ServicesSection from "../components/ServicesSection/ServicesSection";
 import PortofolioSection from "../components/PortofolioSection";
 import ContactUs from "../components/ContactUs/ContactUs";
+import CardSwiper from "../components/UI/CardSwiper";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -42,6 +43,7 @@ export default function Home() {
           <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
           <HeroSection />
           <ServicesSection />
+          {/* <CardSwiper /> */}
           <PortofolioSection />
           <ContactUs />
         </div>
