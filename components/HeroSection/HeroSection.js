@@ -4,9 +4,11 @@ import AvatarSection from "./AvatarSection";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import useRandomizeText from "../../hooks/useRandomizeText";
 
 const HeroSection = () => {
   const textAnimation = useAnimation();
+  const titleRef = useRandomizeText();
 
   const [refBottom, inViewRefBottom] = useInView({
     threshold: 0.2,
@@ -35,7 +37,9 @@ const HeroSection = () => {
         className="text-center px-10"
       >
         <h2 className="text-5xl py-2 text-red-600 font-semibold  md:text-6xl">
-          Red Agency
+          <span ref={titleRef} data-value="RedAgency">
+            RedAgency
+          </span>
         </h2>
         <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-500">
           Web Devlopment & Digital Marketing.

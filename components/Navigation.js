@@ -1,9 +1,18 @@
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import useRandomizeText from "../hooks/useRandomizeText";
 
 const Navigation = ({ darkMode, setDarkMode }) => {
+  const titleRef = useRandomizeText();
+
   return (
     <nav className="py-10 mb-12 flex justify-between">
-      <h1 className="text-xl font-burtons dark:text-red-600">developedbyred</h1>
+      <h1
+        ref={titleRef}
+        data-value="developedbyred"
+        className="text-xl font-burtons dark:text-red-600"
+      >
+        developedbyred
+      </h1>
       <ul className="flex items-center">
         <li>
           <BsFillMoonStarsFill
