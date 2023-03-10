@@ -62,29 +62,29 @@ const ContactUs = () => {
 
           message: Yup.string().required("Required"),
         })}
-        onSubmit={(values, { setSubmitting }) => {
-          // try {
-          //   const response = fetch("/api/contact", {
-          //     method: "POST",
-          //     body: JSON.stringify({
-          //       firstName: values.firstName,
-          //       email: values.email,
-          //       subject: values.subject,
-          //       message: values.message,
-          //     }),
-          //     headers: {
-          //       "Content-Type": "application/json",
-          //     },
-          //   });
-          // } catch (error) {}
+        // onSubmit={(values, { setSubmitting }) => {
+        //   try {
+        //     const response = fetch("/api/contact", {
+        //       method: "POST",
+        //       body: JSON.stringify({
+        //         name: values.name,
+        //         email: values.email,
+        //         subject: values.subject,
+        //         message: values.message,
+        //       }),
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //     });
+        //   } catch (error) {}
 
 
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+        //   setTimeout(() => {
+        //     // alert(JSON.stringify(values, null, 2));
 
-            setSubmitting(false);
-          }, 400);
-        }}
+        //     setSubmitting(false);
+        //   }, 400);
+        // }}
       >
         {({
           values,
